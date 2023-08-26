@@ -1,6 +1,6 @@
 using System;
 
-namespace Echo
+namespace ReadLine
 {
     class Program
     {
