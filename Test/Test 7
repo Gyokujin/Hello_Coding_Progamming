@@ -1,0 +1,165 @@
+using System;
+
+namespace Test7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 7-1
+            // 다음 코드를 while문을 사용해서 완성하세요
+
+            int[] scores1 = new int[5];
+            int index1 = 0;
+
+            while (index1 < 5)
+            {
+                Console.Write(index1);
+                Console.WriteLine("번째 과목의 성적을 입력하세요.");
+                scores1[index1] = int.Parse(Console.ReadLine());
+                index1 = index1 + 1;
+            }
+
+            Console.Write("총점은 ");
+            Console.Write(scores1[0] + scores1[1] + scores1[2] + scores1[3] + scores1[4]);
+            Console.WriteLine("점입니다.");
+
+            // 7-2
+            // 다음 코드의 빈 곳을 채워서 완성하세요
+
+            Console.WriteLine("수업을 몇 과목 들었습니까?");
+            int subjectCount = int.Parse(Console.ReadLine());
+
+            int[] scores2 = new int[subjectCount];
+            int index2 = 0;
+            int total1 = 0;
+
+            while (index2 < subjectCount)
+            {
+                Console.Write(index2);
+                Console.WriteLine("번째 과목의 성적을 입력하세요.");
+                scores2[index2] = int.Parse(Console.ReadLine());
+                total1 = total1 + scores2[index2];
+                index2 = index2 + 1;
+            }
+
+            Console.Write("평균은");
+            Console.Write(total1 / subjectCount);
+            Console.WriteLine("점입니다.");
+
+            // 7-3
+            // 다음 코드에 버그가 있습니다. 고쳐서 완성하세요.
+
+            Console.WriteLine("몇 명의 친구들에게 사과를 나눠줄까요?");
+            int friendCount = int.Parse(Console.ReadLine());
+
+            int[] appleNumbers = new int[friendCount];
+            int index3 = 0;
+            int total2 = 0;
+
+            while (index3 < friendCount)
+            {
+                Console.Write(index3);
+                Console.WriteLine("번째 친구가 가져갈 사과는 몇 개인가요?");
+                appleNumbers[index3] = int.Parse(Console.ReadLine());
+                total2 = total2 + appleNumbers[index3];
+                index3 = index3 + 1;
+            }
+
+            Console.Write("친구들에게");
+            Console.Write(total2);
+            Console.WriteLine("개의 사과를 나눠줬습니다.");
+
+            // 7-4
+            // 다음 코드에서 11번 줄을 while(userInput != "끝") 대신 while(true)를 사용하게 바꾸세요.
+
+            string userInput1 = "";
+
+            while (true)
+            {
+                Console.WriteLine("아무 글자나 입력하세요. 끝내려면 '끝'을 입력하세요.");
+                userInput1 = Console.ReadLine();
+                Console.WriteLine(userInput1);
+
+                if (userInput1 == "끝")
+                {
+                    Console.WriteLine("끝냅니다.");
+                    break;
+                }
+            }
+
+            // 7-5
+            // [코드 8-5] 에서 비밀번호를 입력하는 부분을 while문을 사용하도록 수정하세요.
+
+            int[] passcodeNumbers = { 6, 2, 1, 9, 4, 7 };
+            int[] userInput2 = new int[6];
+
+            while (true)
+            {
+                int index = 0;
+
+                while (index < 6)
+                {
+                    Console.Write((index + 1));
+                    Console.WriteLine("번째 숫자를 넣어주세요.");
+                    userInput2[index] = int.Parse(Console.ReadLine());
+                    index = index + 1;
+                }
+
+                if (userInput2[0] == passcodeNumbers[0] && userInput2[1] == passcodeNumbers[1] && userInput2[2] == passcodeNumbers[2] && userInput2[3] == passcodeNumbers[3] && userInput2[4] == passcodeNumbers[4] && userInput2[5] == passcodeNumbers[5])
+                {
+                    Console.WriteLine("문이 열렸습니다.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("비밀번호가 틀렸습니다.");
+                }
+            }
+
+            // 7-6
+            // 먼저 총학생 수를 입력받습니다. 그리고 각 학생마다 각각 국어, 영어, 수학 점수를 입력받습니다. 그다음 입력받은 점수를
+            // 계산해서 각 학생의 총점과 평균을 구하는 프로그램을 작성하세요.
+
+            Console.WriteLine("총학생의 수를 입력하세요.");
+            int studentCount = int.Parse(Console.ReadLine());
+            int[] scoreKorea = new int[studentCount];
+            int[] scoreEnglish = new int[studentCount];
+            int[] scoreMath = new int[studentCount];
+            int index4 = 0;
+
+            while (index4 < studentCount)
+            {
+                Console.WriteLine((index4 + 1) + "번째 학생의 국어 점수를 입력하세요.");
+                scoreKorea[index4] = int.Parse(Console.ReadLine());
+                Console.WriteLine((index4 + 1) + "번째 학생의 영어 점수를 입력하세요.");
+                scoreEnglish[index4] = int.Parse(Console.ReadLine());
+                Console.WriteLine((index4 + 1) + "번째 학생의 수학 점수를 입력하세요.");
+                scoreMath[index4] = int.Parse(Console.ReadLine());
+
+                index4 = index4 + 1;
+            }
+
+            index4 = 0;
+
+            while (index4 < studentCount)
+            {
+                Console.Write((index4 + 1) + "번째 학생의 국어 점수는 ");
+                Console.WriteLine(scoreKorea[index4]);
+                Console.Write((index4 + 1) + "번째 학생의 영어 점수는 ");
+                Console.WriteLine(scoreEnglish[index4]);
+                Console.Write((index4 + 1) + "번째 학생의 수학 점수는 ");
+                Console.WriteLine(scoreMath[index4]);
+                int total = scoreKorea[index4] + scoreEnglish[index4] + scoreMath[index4];
+                int average = total / 3;
+
+                Console.Write("총점은 ");
+                Console.WriteLine(total);
+                Console.Write("평균은 ");
+                Console.WriteLine(average);
+
+                index4 = index4 + 1;
+            }
+        }
+    }
+}
