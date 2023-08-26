@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Test2
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 2-1
+            // 다음 값의 상수의 종류는 무엇일까요?
+
+            int var1 = 314;         // 정수
+            string var2 = "314";    // 문자열
+            double var3 = 24.78;    // 실수
+            string var4 = "24.78";  // 문자열
+            string var5 = "우하하"; // 문자열
+
+            // 2-2
+            // 다음 코드를 실행하면 어떤 결과가 나올까요?
+
+            string name = "홍길동";
+            Console.Write("이름: ");
+            Console.WriteLine(name);
+
+            int age = 23;
+            Console.Write("나이: ");
+            Console.WriteLine(age);
+
+            // 이름: 홍길동
+            // 나이: 23
+
+            // 2-3
+            // 다음 실행 화면처럼 출력하려고 합니다. 코드를 작성하세요.
+            // 문자열 출력
+            // 23.31
+            // 출력 성공
+
+            string stringOut = "문자열 출력";
+            Console.WriteLine(stringOut);
+
+            double number1 = 23.31;
+            Console.WriteLine(number1);
+
+            string success = "출력 성공";
+            Console.WriteLine(success);
+
+            // 2-4
+            // 다음 코드는 상수를 그대로 사용해서 출력하고 있습니다. 상수에 이름을 붙이고 그 이름을 사용하도록 수정하세요.
+            // Console.WriteLine(286)
+            // Console.WriteLine(3.141592);
+            // Console.WriteLine("문자열도 있음");
+
+            int var6 = 286;
+            double var7 = 3.141592;
+            string var8 = "문자열도 있음";
+            Console.WriteLine(var6);
+            Console.WriteLine(var7);
+            Console.WriteLine(var8);
+
+            // 2-5
+            // 다음 코드에는 오류가 있어 빌드가 되지 않습니다. 그 문제를 고치세요.
+            double number2 = 22.7;
+            Console.WriteLine(number2);
+
+            int number3 = -13;
+            Console.WriteLine(number3);
+        }
+    }
+}
