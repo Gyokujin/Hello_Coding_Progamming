@@ -1,9 +1,0 @@
-            // 다음 코드를 실행하면 어떤 결과가 나올까요? 실행 화면에 예상 내용을 적어보세요.
-
-            Console.WriteLine("출력문");
-            Console.Write("abcde");
-            Console.Write("가나다라마");
-            Console.WriteLine("qwerty");
-
-            // 출력문
-            // abcde가나다라마qwerty
