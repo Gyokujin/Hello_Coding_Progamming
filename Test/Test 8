@@ -1,0 +1,147 @@
+using System;
+
+namespace Test8
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 8-1
+            // 다음 코드를 for문을 사용하여 완성하세요.
+
+            Console.WriteLine("몇 명의 친구들에게 사과를 나눠줄까요?");
+            int friendCount = int.Parse(Console.ReadLine());
+
+            int[] appleNumbers = new int[friendCount];
+
+            for (int index = 0; index < friendCount; index++)
+            {
+                Console.Write(index);
+                Console.WriteLine("번째 친구가 가져갈 사과는 몇 개인가요?");
+                appleNumbers[index] = int.Parse(Console.ReadLine());
+            }
+
+            for (int index = 0; index < friendCount; index++)
+            {
+                Console.Write(index);
+                Console.Write("번째 친구가 가져간 사과의 개수는 ");
+                Console.Write(appleNumbers[index]);
+                Console.WriteLine("개입니다.");
+            }
+
+            // 8-2
+            // 다음 코드를 for문을 사용하여 완성하세요.
+            int[] scores = new int[5];
+
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write(i);
+                Console.WriteLine("번째 과목의 성적을 입력하세요.");
+                scores[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.Write("총점은 ");
+            int sum = 0;
+            for (int i = 0; i < 5; i++)
+            {
+                sum += scores[i];
+            }
+            Console.WriteLine(sum);
+            Console.WriteLine("점입니다.");
+
+            // 8-3
+            // 짝수단(2단, 4단, 6단, 8단)만 출력하도록 [코드 9-4]를 수정하세요.
+
+            for (int i = 2; i <= 9; i = i + 2)
+            {
+                Console.Write(i);
+                Console.WriteLine("단");
+                for (int j = 1; j <= 9; j++)
+                {
+                    Console.Write(i);
+                    Console.Write("x");
+                    Console.Write(j);
+                    Console.Write(" = ");
+                    Console.Write(i * j);
+                    Console.Write(" ");
+                }
+                Console.WriteLine();
+            }
+
+            // 8-4
+            // [코드 9-2]를 수정해서 비밀번호를 다섯 번만 입력할 수 있게 바꾸세요.
+
+            int[] passcodeNumbers = { 6, 2, 1, 9, 4, 7 };
+            int chance = 5;
+            int passcodeLength = 6;
+            int[] userInput = new int[passcodeLength];
+
+            for (int i = 0; i < 5; i++)
+            {
+                bool isPasswordCorrect = true;
+
+                Console.WriteLine(chance + "번의 기회가 남았습니다.");
+                for (int passcodeIndex = 0; passcodeIndex < passcodeLength; passcodeIndex++)
+                {
+                    Console.Write(passcodeIndex);
+                    Console.WriteLine("번째 숫자를 넣어주세요.");
+                    userInput[passcodeIndex] = int.Parse(Console.ReadLine());
+                }
+
+
+                for (int passcodeIndex = 0; passcodeIndex < passcodeLength; passcodeIndex++)
+                {
+                    if (userInput[passcodeIndex] != passcodeNumbers[passcodeIndex])
+                    {
+                        isPasswordCorrect = false;
+                        Console.WriteLine("비밀번호가 틀렸습니다.");
+                        chance--;
+                        break;
+                    }
+                }
+
+                if (isPasswordCorrect)
+                {
+                    Console.WriteLine("문이 열렸습니다.");
+                    break;
+                }
+            }
+
+            if (chance == 0)
+            {
+                Console.WriteLine("모든 기회를 사용하였습니다.");
+            }
+
+            // 8-5
+            // 3학년에 다섯 개의 반이 있고 한 반의 학생은 10명입니다. 각 반의 학생들의 성적을 입력받아서 반별로 평균을 구하세요
+
+            int classNum = 5; // 반의 수
+            int studentNum = 10; // 한 반의 학생 수
+            int[] totalScore = new int[5]; // 각 반의 총점을 모아놓은 배열
+
+            for (int i = 0; i < classNum; i++)
+            {
+                Console.WriteLine((i + 1) + "반의 학생 성적을 입력하세요.");
+                int sum2 = 0; // 반의 총점을 기록
+
+                for (int j = 0; j < studentNum; j++)
+                {
+                    Console.WriteLine((j + 1) + "번째 학생의 성적을 입력하세요.");
+                    int score = int.Parse(Console.ReadLine());
+                    sum2 += score;
+                }
+
+                totalScore[i] = sum2;
+            }
+
+            Console.WriteLine("각 반의 평균 점수를 출력합니다.");
+
+            for (int i = 0; i < classNum; i++)
+            {
+                int average = (totalScore[i] / studentNum);
+                Console.Write((i + 1) + "반의 평균 점수는 ");
+                Console.WriteLine(average);
+            }
+        }
+    }
+}
