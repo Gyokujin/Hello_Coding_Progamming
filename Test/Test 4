@@ -1,0 +1,94 @@
+using System;
+
+namespace Test4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 4-1
+            // 다음 코드를 완성하세요.
+
+            Console.WriteLine("첫 번째 숫자를 입력하세요.");
+            string userInput1 = Console.ReadLine();
+            int number1 = int.Parse(userInput1);
+            Console.WriteLine("두 번째 숫자를 입력하세요.");
+            string userInput2 = Console.ReadLine();
+            int number2 = int.Parse(userInput2);
+            Console.Write(number1);
+            Console.Write(" + ");
+            Console.Write(number2);
+            Console.Write(" = ");
+            Console.WriteLine(number1 + number2);
+
+            // 4-2
+            // 다음 코드에 버그가 있습니다. 고쳐서 완성하세요.
+
+            Console.WriteLine("첫 번째 숫자를 입력하세요.");
+            string userInput3 = Console.ReadLine();
+            Console.WriteLine("두 번째 숫자를 입력하세요.");
+            string userInput4 = Console.ReadLine();
+            int number3 = int.Parse(userInput3);
+            int number4 = int.Parse(userInput4);
+
+            Console.WriteLine(number3 - number4);
+
+            // 4-3
+            // 다음 코드에서 문자열형 변수 userInput을 없애보세요.
+
+            Console.WriteLine("첫 번째 숫자를 입력하세요.");
+            double number = double.Parse(Console.ReadLine());
+            Console.Write("입력한 숫자는  ");
+            Console.WriteLine(number);
+
+            // 4-4
+            // 문자열 userInput5와 userInput6을 키보드 입력으로 받아 실수 number5와 number6으로 변환한 다음 사칙연산(+, -, *, /)의
+            // 결과를 각각 화면에 출력하는 프로그램을 작성하세요.
+
+            string userInput5 = Console.ReadLine();
+            string userInput6 = Console.ReadLine();
+
+            double number5 = double.Parse(userInput5);
+            double number6 = double.Parse(userInput6);
+
+            double add = number5 + number6;
+            double sub = number5 - number6;
+            double mul = number5 * number6;
+            double div = number5 / number6;
+
+            Console.WriteLine("number5 + number6 = " + add);
+            Console.WriteLine("number5 - number6 = " + sub);
+            Console.WriteLine("number5 * number6 = " + mul);
+            Console.WriteLine("number5 / number6 = " + div);
+
+            // 4-5
+            // 위 문제에서 나누기의 분모가 되는 값에 0을 넣으면 어떻게 될까요?
+
+            double div2 = number5 / 0; // 극한이 아닌 경우는 정의되지 않는다.
+            Console.WriteLine(div2);
+
+            // 4-6
+            // 동전이 10개 들어 있는 주머니가 있습니다. 어머니께서 주머니에 동전을 몇 개 더 넣고 아람이와 우람이에게 원하는 만큼
+            // 동전을 가져가라고 할 겁니다. 이것을 프로그램으로 작성하세요. 프로그램이 실행되면 우선 주머니에 들어 있는 동전의
+            // 개수를 출력하고 어머니께서 넣을 동전의 개수와 아람이, 우람이가 꺼낼 동전의 개수를 키보드 입력으로 받습니다.
+            // 그다음 주머니에 남아 있는 동전의 개수를 계산해서 화면에 출력하면 됩니다.
+
+            Console.WriteLine("주머니에는 동전이 10개 들어 있습니다.");
+            int pocketCoin = 10;
+
+            Console.WriteLine("어머니는 몇 개의 동전을 주머니에 넣었나요?");
+            int mommyCoin = int.Parse(Console.ReadLine());
+            pocketCoin = pocketCoin + mommyCoin;
+
+            Console.WriteLine("아람이는 몇 개의 동전을 꺼냈나요?");
+            int aramCoin = int.Parse(Console.ReadLine());
+            pocketCoin = pocketCoin - aramCoin;
+
+            Console.WriteLine("우람이는 몇 개의 동전을 꺼냈나요?");
+            int uramCoin = int.Parse(Console.ReadLine());
+            pocketCoin = pocketCoin - uramCoin;
+
+            Console.WriteLine("주머니에 남아 있는 동전의 개수는 " + pocketCoin + "개입니다.");
+        }
+    }
+}
