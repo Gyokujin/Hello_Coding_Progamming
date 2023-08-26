@@ -4,6 +4,7 @@ namespace Calculator
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.WriteLine("첫 번째 숫자를 입력하세요.");
